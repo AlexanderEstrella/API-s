@@ -7,6 +7,11 @@ app.get("/", function (req, res) {
     "https://api.openweathermap.org/data/2.5/weather?zip=34756&appid=7d4afcfb6d120270b393eb86ed42c22c&units=imperial";
   https.get(url, function (response) {
     console.log(response.statusCode);
+    
+    respose.on("data", function(data){
+   const weatherData = JSON.parse(data)
+   console.log(weatherData);
+    })
   });
   res.send("server is up and running.");
 });
