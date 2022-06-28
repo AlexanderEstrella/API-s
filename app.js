@@ -10,7 +10,8 @@ app.get("/", function (req, res) {
     
     respose.on("data", function(data){
    const weatherData = JSON.parse(data)
-   console.log(weatherData);
+   const temp = weatherData.main.temp
+   console.log(temp);
     })
   });
   res.send("server is up and running.");
