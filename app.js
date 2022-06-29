@@ -21,7 +21,7 @@ app.post("/", (req, res) => {
     unit;
   https.get(url, function (response) {
     console.log(response.statusCode);
-<<<<<<< HEAD
+
     response.on("data", function (data) {
       const weatherData = JSON.parse(data);
       const temp = weatherData.main.temp;
@@ -39,14 +39,12 @@ app.post("/", (req, res) => {
       res.write("<img src=" + Imageurl + ">");
       res.send();
     });
-=======
     
     respose.on("data", function(data){
    const weatherData = JSON.parse(data)
    const temp = weatherData.main.temp
    console.log(temp);
     })
->>>>>>> 1e4451ab0a1df3640b8695cb6b499b9a0ab474cf
   });
 });
 
