@@ -9,7 +9,8 @@ app.get("/", function (req, res) {
 
 app.post("/", (req, res) => {
   const query = req.body.cityName;
-  const apiKey = "7d4afcfb6d120270b393eb86ed42c22c";
+  const apiKey = "1f7fb59e18573e987328fc11b11f0e91
+";
 
   const unit = "imperial";
   const url =
