@@ -3,20 +3,15 @@ const https = require("https");
 const dotenv = require("dotenv");
 const path = require("path");
 const fs = require("fs");
-const ejs = require("ejs");
 const app = express();
 dotenv.config({ path: "./config.env" });
 
 const Key = process.env.APIKEY;
 
-app.set("view engine", "ejs");
-
-app.use(express.static("assets"));
-
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", function (req, res) {
-  res.render("index");
+  res.sendFile(__dirname + "/index.html");
 });
 
 app.post("/", (req, res) => {
