@@ -17,7 +17,6 @@ app.get("/", function (req, res) {
 app.post("/", (req, res) => {
   const query = req.body.cityName;
   const apiKey = Key;
-  console.log(apiKey);
   const unit = "imperial";
   const url =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -27,7 +26,7 @@ app.post("/", (req, res) => {
     "&units=" +
     unit;
 
-  https.get(url, function (response) {
+  fetch(url, function (response) {
     console.log(response.statusCode);
     response.on("data", function (data) {
       console.log(data);
