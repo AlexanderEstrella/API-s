@@ -26,7 +26,7 @@ app.post("/", (req, res) => {
     "&units=" +
     unit;
 
-  axios.get(url, function (response) {
+ https.get(url, function (response) {
     console.log(response.statusCode);
     response.on("data", function (data) {
       console.log(data);
@@ -51,6 +51,6 @@ app.post("/", (req, res) => {
   });
 });
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log("server started");
 });
