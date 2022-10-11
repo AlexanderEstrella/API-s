@@ -26,7 +26,7 @@ app.post("/", (req, res) => {
     "&units=" +
     unit;
 
-  fetch(url, function (response) {
+  axios.get(url, function (response) {
     console.log(response.statusCode);
     response.on("data", function (data) {
       console.log(data);
