@@ -1,17 +1,28 @@
 const express = require("express");
 const https = require("https");
+const dotenv = require("dotenv");
+const path = require("path");
+const fs = require("fs");
+const ejs = require("ejs");
 const app = express();
+dotenv.config({ path: "./config.env" });
+
+const Key = process.env.APIKEY;
+
+app.set("view engine", "ejs");
+
+app.use(express.static("public"));
+
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/index.html");
+  res.render("index");
 });
 
 app.post("/", (req, res) => {
   const query = req.body.cityName;
-  const apiKey = "1f7fb59e18573e987328fc11b11f0e91
-";
-
+  const apiKey = Key;
+  console.log(apiKey);
   const unit = "imperial";
   const url =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -20,10 +31,11 @@ app.post("/", (req, res) => {
     apiKey +
     "&units=" +
     unit;
+
   https.get(url, function (response) {
     console.log(response.statusCode);
-
     response.on("data", function (data) {
+      console.log(data);
       const weatherData = JSON.parse(data);
       const temp = weatherData.main.temp;
       const weatherDescription = weatherData.weather[0].description;
@@ -40,15 +52,8 @@ app.post("/", (req, res) => {
       res.write("<img src=" + Imageurl + ">");
       res.send();
     });
-    
-    respose.on("data", function(data){
-   const weatherData = JSON.parse(data)
-   const temp = weatherData.main.temp
-   console.log(temp);
-    })
   });
 });
-
 app.listen(3000, () => {
   console.log("server");
 });
