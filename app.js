@@ -4,9 +4,6 @@ const dotenv = require("dotenv");
 const path = require("path");
 const fs = require("fs");
 const app = express();
-dotenv.config({ path: "./config.env" });
-
-const Key = process.env.APIKEY;
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -16,14 +13,11 @@ app.get("/", function (req, res) {
 
 app.post("/", (req, res) => {
   const query = req.body.cityName;
-  const apiKey = Key;
-  console.log(apiKey);
   const unit = "imperial";
   const url =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     query +
-    "&appid=" +
-    apiKey +
+    "&appid=02363ee05c5b0fec0f8200517a2bcb98" +
     "&units=" +
     unit;
 
