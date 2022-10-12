@@ -25,7 +25,6 @@ app.post("/", (req, res) => {
     console.log(response.statusCode);
     response.on("data", function (data) {
       console.log(data);
-
       const weatherData = JSON.parse(data);
       const temp = weatherData.main.temp;
       const weatherDescription = weatherData.weather[0].description;
@@ -45,6 +44,6 @@ app.post("/", (req, res) => {
   });
 });
 
-app.listen(process.env.PORT || 4000, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log("server started");
 });

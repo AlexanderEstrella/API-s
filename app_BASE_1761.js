@@ -4,6 +4,9 @@ const dotenv = require("dotenv");
 const path = require("path");
 const fs = require("fs");
 const app = express();
+dotenv.config({ path: "./config.env" });
+
+const Key = process.env.APIKEY;
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -13,11 +16,14 @@ app.get("/", function (req, res) {
 
 app.post("/", (req, res) => {
   const query = req.body.cityName;
+  const apiKey = Key;
+  console.log(apiKey);
   const unit = "imperial";
   const url =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     query +
-    "&appid=02363ee05c5b0fec0f8200517a2bcb98" +
+    "&appid=" +
+    apiKey +
     "&units=" +
     unit;
 
@@ -25,7 +31,6 @@ app.post("/", (req, res) => {
     console.log(response.statusCode);
     response.on("data", function (data) {
       console.log(data);
-
       const weatherData = JSON.parse(data);
       const temp = weatherData.main.temp;
       const weatherDescription = weatherData.weather[0].description;
@@ -45,6 +50,6 @@ app.post("/", (req, res) => {
   });
 });
 
-app.listen(process.env.PORT || 4000, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log("server started");
 });
