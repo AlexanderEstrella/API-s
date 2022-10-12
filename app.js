@@ -6,6 +6,7 @@ const fs = require("fs");
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/index.html");
