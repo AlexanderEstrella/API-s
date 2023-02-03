@@ -43,7 +43,6 @@ app.post("/", (req, res) => {
       );
       res.write("<img src=" + Imageurl + ">");
       res.send();
-      res.redirect("/")
     });
   });
 });
