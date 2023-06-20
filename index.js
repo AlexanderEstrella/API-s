@@ -1,34 +1,44 @@
-const https = require("https");
+const form = document.getElementById("weatherForm");
+form.addEventListener("submit", Getweather);
 
-function Getweather() {
-  const query = req.body.cityName;
+function Getweather(event) {
+  event.preventDefault(); // Prevent the form from submitting and refreshing the page
+
+  const cityName = document.getElementById("submittedscity").value;
   const unit = "imperial";
   const url =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
-    query +
+    cityName +
     "&appid=02363ee05c5b0fec0f8200517a2bcb98" +
     "&units=" +
     unit;
 
-  https.get(url, function (response) {
-    console.log(response.statusCode);
-    response.on("data", function (data) {
-      console.log(data);
-
-      const weatherData = JSON.parse(data);
+  axios
+    .get(url)
+    .then(function (response) {
+      console.log(response.status, response);
+      const weatherData = response.data;
       const temp = weatherData.main.temp;
       const weatherDescription = weatherData.weather[0].description;
       const icon = weatherData.weather[0].icon;
-      /* const Imageurl = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-      res.write("<p>The weather is currently " + weatherDescription + "</p>");
-      res.write(
-        "<h1>The temperature in " +
-          query +
-          " is " +
-          temp +
-          " degrees fahrenheit</h1>"
+      const imageUrl = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
 
-      res.write("<img src=" + Imageurl + ">"); */
+      const weatherIs = $("<p></p>");
+      const temperatureIs = $("<span></span>");
+      const weatherImg = $("<img>");
+
+      weatherIs.text("The weather is currently " + weatherDescription);
+      temperatureIs.text(
+        "The temperature in Orlando is " + temp + " degrees Fahrenheit"
+      );
+      weatherImg.attr("src", imageUrl);
+
+      // Append the created elements to the existing elements in the document
+      $(".weatheritem .weatheris").html(weatherIs);
+      $(".weatheritem .temperatureis").html(temperatureIs);
+      $("#weatherImg").replaceWith(weatherImg);
+    })
+    .catch(function (error) {
+      console.log(error);
     });
-  });
 }

@@ -17,20 +17,28 @@
         </div>
     </nav>
 
-    <div class="WeatherContainer">
+    <form id="weatherForm">
+        <label for="submittedscity">City Name:</label>
+        <input id="submittedscity" type="text" name="cityName">
+        <button type="submit">Search</button>
+    </form>
 
-        <label for="cityInput">City Name:</label>
-        <input id="cityInput" type="text" name="cityName">
-        <button type="submit" name="button" onclick="Getweaather">Search</button>
+
+    <div class="weatheritems">
         <div class="weatheritem">
+            <p class="weatheris">
+
+            </p>
+            <span class="tempatureis"></span>
+            <img id="weatherImg" src="">
 
         </div>
 
 
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
