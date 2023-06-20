@@ -5,38 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather Map</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<nav class="navbar navbar-default">
-    <div class="container">
-        <div class="navbar-header">
-            <p class="navbar-brand">Weather map</p>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-            <!-- 6 -->
-            <li id="home"><a href="/">HOME</a></li>
-            <li id="about"><a href="">ABOUT US</a></li>
-            <li id="contact"><a href="">CONTACT US</a></li>
-        </ul>
-    </div>
-</nav>
-
 
 <body>
-    <div class="form">
-        <form class="formbody" action="/" method="POST">
-            <label for="cityInput">City Name:</label>
-            <input id="cityInput" type="text" name="cityName">
-            <button type="submit" name="button">Search</button>
-        </form>
+    <nav class="navbarbody">
+        <div class="container">
+            <p class="Navheader ">Weather map</p>
+        </div>
+    </nav>
 
-           
+    <div class="WeatherContainer">
+
+        <label for="cityInput">City Name:</label>
+        <input id="cityInput" type="text" name="cityName">
+        <button type="submit" name="button" onclick="Getweaather">Search</button>
+        <div class="weatheritem">
+
+        </div>
+
+
     </div>
-   
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/index.js"></script>
 </body>
 
 </html>
