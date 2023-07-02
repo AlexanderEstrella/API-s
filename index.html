@@ -12,30 +12,39 @@
 
 <body>
     <nav class="navbarbody">
-        <div class="container">
-            <p class="Navheader ">Weather map</p>
+        <div class="Date">
+            <p class="Today">Today</p>
         </div>
+        <div class="title">
+            <p class="Navheader">3 day forecast Weather Map</p>
+        </div>
+        <form id="weatherForm">
+            <label for="submittedscity">City Name:</label>
+            <input id="submittedscity" type="text" name="cityName">
+            <button type="submit">Search</button>
+        </form>
     </nav>
 
-    <form id="weatherForm">
-        <label for="submittedscity">City Name:</label>
-        <input id="submittedscity" type="text" name="cityName">
-        <button type="submit">Search</button>
-    </form>
-
-
     <div class="weatheritems">
-        <div class="weatheritem">
-            <p class="weatheris">
-
-            </p>
-            <span class="tempatureis"></span>
-            <img id="weatherImg" src="">
-
+        <div class="weatheritem0">
+            <p class="weatheris0"></p>
+            <span class="tempatureis0"></span>
+            <img id="weatherImg0" src="">
         </div>
 
+        <div class="weatheritem1">
+            <p class="weatheris1"></p>
+            <span class="tempatureis1"></span>
+            <img id="weatherImg1" src="">
+        </div>
 
+        <div class="weatheritem2">
+            <p class="weatheris2"></p>
+            <span class="tempatureis2"></span>
+            <img id="weatherImg2" src="">
+        </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="index.js"></script>
