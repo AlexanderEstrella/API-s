@@ -1,13 +1,15 @@
-# Getting Started
+# Weather map
 
-## Available Scripts
+The weather app was created in order to provide users with an accurate 3 day forecast by city. Displays todays date as well as weather for the next 2 days.
 
-In the project directory, you can run:
+Below is an screenshot of the app
+![Alt text](image.png)
 
-### npm start
+Technologies used:
 
-Runs the app in the development mode.\
-Open [http://localhost:5000] to view it in your browser.
+- Javascript
+- Jquery
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Contributors:
+
+- Alex Martinez
