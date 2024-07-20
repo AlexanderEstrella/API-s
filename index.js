@@ -34,7 +34,7 @@ function Getweather(event) {
       const weatherImg0 = $("<img>");
 
       weatherIs0.text("Today the weather is currently " + weatherDescription0);
-      temperatureIs0.text(
+      temperatureIs0.innerText(
         "The temperature in Orlando is " + temp0 + " degrees Fahrenheit"
       );
       weatherImg0.attr("src", imageUrl0);
@@ -58,7 +58,7 @@ function Getweather(event) {
       weatherIs1.text(
         "The weather is currently expected to be " + weatherDescription3
       );
-      temperatureIs1.text(
+      temperatureIs1.innerText(
         "The temperature in Orlando is " + temp3 + " degrees Fahrenheit"
       );
       weatherImg1.attr("src", imageUrl3);
@@ -82,7 +82,7 @@ function Getweather(event) {
       weatherIs2.text(
         "The weather is currently expected to be " + weatherDescription10
       );
-      temperatureIs2.text(
+      temperatureIs2.innerText(
         "The temperature in Orlando is " + temp10 + " degrees Fahrenheit"
       );
       weatherImg2.attr("src", imageUrl10);
