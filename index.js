@@ -37,6 +37,8 @@ function Getweather(event) {
       temperatureIs0.innerText(
         "The temperature in Orlando is " + temp0 + " degrees Fahrenheit"
       );
+
+console.log(temperatureIs0);
       weatherImg0.attr("src", imageUrl0);
 
       $(".weatheritem0 .weatheris0").html(weatherIs0);
@@ -91,6 +93,8 @@ function Getweather(event) {
       $(".weatheritem2 .temperatureis2").html(temperatureIs2);
       $("#weatherImg2").attr("src", imageUrl10);
     })
+
+    console.log(temperatureIs0, temperatureIs1, temperatureIs2,);
 
     .catch(function (error) {
       let message = error.response;
