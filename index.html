@@ -1,53 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Map</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Map</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <nav class="navbarbody">
-        <div class="Date">
-            <p class="Today">Today</p>
-        </div>
-        <div class="title">
-            <p class="Navheader">3 day forecast Weather Map</p>
-        </div>
-        <form id="weatherForm">
-            <label for="submittedscity">City Name:</label>
-            <input id="submittedscity" type="text" name="cityName">
-            <button type="submit">Search</button>
-        </form>
-    </nav>
-
-    <div class="weatheritems">
-        <div class="weatheritem0">
-            <p class="weatheris0"></p>
-            <span class="tempatureis0"></span>
-            <img id="weatherImg0" src="">
-        </div>
-
-        <div class="weatheritem1">
-            <p class="weatheris1"></p>
-            <span class="tempatureis1"></span>
-            <img id="weatherImg1" src="">
-        </div>
-
-        <div class="weatheritem2">
-            <p class="weatheris2"></p>
-            <span class="tempatureis2"></span>
-            <img id="weatherImg2" src="">
-        </div>
+  <nav class="navbarbody">
+    <div class="Date">
+      <p class="Today">Today</p>
     </div>
+    <div class="title">
+      <p class="Navheader">3 day forecast Weather Map</p>
+    </div>
+    <form id="weatherForm">
+      <label for="submittedscity">City Name:</label>
+      <input id="submittedscity" type="text" name="cityName">
+      <button type="submit">Search</button>
+    </form>
+  </nav>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="index.js"></script>
+  <div class="weatheritems">
+    <div class="weatheritem0">
+      <p class="weatheris0"></p>
+      <span class="temperatureis0"></span>
+      <img id="weatherImg0" src="">
+    </div>
+    <div class="weatheritem1">
+      <p class="weatheris1"></p>
+      <span class="temperatureis1"></span>
+      <img id="weatherImg1" src="">
+    </div>
+    <div class="weatheritem2">
+      <p class="weatheris2"></p>
+      <span class="temperatureis2"></span>
+      <img id="weatherImg2" src="">
+    </div>
+  </div>
+
+  <script src="index.js"></script>
 </body>
-
 </html>
